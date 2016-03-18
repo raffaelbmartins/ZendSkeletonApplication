@@ -42,7 +42,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
             isset($config['service_manager']) ? $config['service_manager'] : array()
         ));
         $this->serviceManager->setService('ApplicationConfig', $config);
-        $this->serviceManager->setFactory('ServiceListener', 'Zend\Mvc\Service\ServiceListenerFactory');
+        $this->serviceManager->setFactory('ServListener', 'Zend\Mvc\Service\ServiceListenerFactory');
         
         $moduleManager = $this->serviceManager->get('ModuleManager');
         $moduleManager->loadModules();

@@ -22,7 +22,7 @@ class Bootstrap
 
         include 'init_autoloader.php';
 
-        define('ZF2_PATH', realpath('vendor/zendframework/zendframework/library'));
+        define('ZF2_PATH', realpath('vendor/zendframework'));
 
         $path = array(
             ZF2_PATH,
@@ -30,11 +30,11 @@ class Bootstrap
         );
         set_include_path(implode(PATH_SEPARATOR, $path));
 
-        require_once  'Zend/Loader/AutoloaderFactory.php';
-        require_once  'Zend/Loader/StandardAutoloader.php';
+        //require_once  'Zend/Loader/AutoloaderFactory.php';
+        //require_once  'Zend/Loader/StandardAutoloader.php';
 
         // setup autoloader
-        AutoloaderFactory::factory(
+        \Zend\Loader\AutoloaderFactory::factory(
             array(
                 'Zend\Loader\StandardAutoloader' => array(
                     StandardAutoloader::AUTOREGISTER_ZF => true,
